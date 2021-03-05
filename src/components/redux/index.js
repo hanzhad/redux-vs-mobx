@@ -43,8 +43,7 @@ function _Redux() {
 
     useEffect(() => () => {
         clearInterval(t);
-    }, []);
-
+    }, [t])
 
     return (
         <>

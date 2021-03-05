@@ -36,7 +36,7 @@ function Mobx() {
 
     useEffect(() => () => {
         clearInterval(t);
-    }, []);
+    }, [t])
 
     return (
         <>

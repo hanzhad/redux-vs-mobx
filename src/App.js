@@ -7,6 +7,7 @@ import {
 import Redux from "./components/redux";
 import Mobx from "./components/mobx";
 import State from "./components/state";
+import Context from "./components/context";
 
 
 function _App() {
@@ -19,6 +20,7 @@ function _App() {
                     <button onClick={() => history.push('/redux')}>Redux</button>
                     <button onClick={() => history.push('/mobx')}>mobx</button>
                     <button onClick={() => history.push('/state')}>State</button>
+                    <button onClick={() => history.push('/context')}>Context</button>
                 </Route>
                 <Route path="/redux" exact>
                     <Redux/>
@@ -28,6 +30,9 @@ function _App() {
                 </Route>
                 <Route path="/state" exact>
                     <State/>
+                </Route>
+                <Route path="/context" exact>
+                    <Context />
                 </Route>
             </Switch>
 

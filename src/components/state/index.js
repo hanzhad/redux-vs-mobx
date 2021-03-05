@@ -18,8 +18,7 @@ const State = () => {
 
     useEffect(() => () => {
         clearInterval(t);
-    }, []);
-
+    }, [t])
 
     return (
         <>
