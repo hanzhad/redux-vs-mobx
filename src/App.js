@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useHistory,
+} from "react-router-dom";
+import Redux from "./components/redux";
+import Mobx from "./components/mobx";
+import State from "./components/state";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function _App() {
+    const history = useHistory();
+
+    return (
+        <div className="App">
+            <Switch>
+                <Route exact path="/">
+                    <button onClick={() => history.push('/redux')}>Redux</button>
+                    <button onClick={() => history.push('/mobx')}>mobx</button>
+                    <button onClick={() => history.push('/state')}>State</button>
+                </Route>
+                <Route path="/redux" exact>
+                    <Redux/>
+                </Route>
+                <Route path="/mobx" exact>
+                    <Mobx/>
+                </Route>
+                <Route path="/state" exact>
+                    <State/>
+                </Route>
+            </Switch>
+
+        </div>
+    );
+}
+
+const App = () => {
+    return (
+        <Router>
+            <_App/>
+        </Router>
+    )
 }
 
 export default App;
